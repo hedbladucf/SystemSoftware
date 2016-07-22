@@ -1,0 +1,211 @@
+// Error 1: "Use = instead of :="
+const ex := d;
+int x, y;
+begin
+  x := y+56;
+end.
+
+// Output 1:
+ERROR (1): Use = instead of :=.
+
+
+
+
+// Error 2: "= must be followed by a number."
+const ex = d;
+int x, y;
+begin
+  x := y+56;
+end.
+
+// Output 2:
+ERROR (2): = must be followed by a number.
+
+
+
+
+// Error 3: Identifier must be followed by =.
+const ex 9 d;
+int x, y;
+begin
+  x := y+56;
+end.
+
+// Output 1:
+ERROR (3): Identifier must be followed by =.
+
+
+
+
+// Error 4: Identifier must be followed by =.
+const luis = 5;
+int 4, y;
+begin
+  x := y+56;
+end.
+
+// Output 4:
+ERROR: Invalid Identifier '4'.
+ERROR (4): const/int must be followed by identifier.
+
+
+
+
+// Error 5: Semicolon or comma missing.
+const luis = 5
+int x, y;
+begin
+  x := y+56;
+end.
+
+// Output 5:
+ERROR (5): Semicolon or comma missing.
+
+
+
+
+
+// Error 9: Period expected.
+const luis = 5;
+int x, y;
+begin
+  x := y+56;
+end
+
+// Output 9:
+ERROR (9): Period expected.
+
+
+
+
+// Error 11: Undeclared identifier.
+const luis = 5;
+int x, y;
+begin
+  z := y+56;
+end.
+
+// Output 11:
+ERROR (11): Undeclared identifier.
+
+
+
+
+// Error 12: Assignment to constant or procedure is not allowed.
+const luis = 5;
+int x, y;
+begin
+  x := y+56;
+  luis := x;
+end.
+
+// Output 12:
+ERROR (12): Assignment to constant or procedure is not allowed.
+
+
+
+
+// Error 13: Assignment operator expected.
+const luis = 5;
+int 4, y;
+begin
+  x := y+56;
+end.
+
+// Output 13:
+ERROR (13): Assignment operator expected.
+
+
+
+
+// Error 14: Semicolon or comma missing.
+const luis = 5
+int x, y;
+begin
+  x := y+56;
+end.
+
+// Output 14:
+ERROR (5): Semicolon or comma missing.
+
+
+
+
+// Error 16: Then expected.
+const luis = 5;
+int x, y;
+begin
+ if 5 > 4 luis
+  x = y+56;
+end.
+
+// Output 16:
+ERROR (16): then expected.
+
+
+
+
+// Error 18: Do expected.
+const luis = 5;
+int x, y;
+begin
+ while 4 < 5 luis
+  x = y+56;
+end.
+
+// Output 18:
+ERROR (18): do expected.
+
+
+
+
+// Error 20: Relational operator expected.
+const luis = 5;
+int x, y;
+begin
+ if 5 luis 4 then
+  x = y+56;
+end.
+
+// Output 20:
+ERROR (20): Relational operator expected.
+
+
+
+
+// Error 25: This number is too large.
+const luis = 5;
+int x, y;
+begin
+  x = y+40023;
+end.
+
+// Output 25:
+ERROR (25): This number is too large.
+
+
+
+
+// Error 27: Identifier expected.
+const luis = 5;
+int x, y;
+begin
+  read 5;
+  x := y+40023;
+end.
+
+// Output 27:
+ERROR (27): Identifier expected.
+
+
+
+
+
+// Error 29: No more registers available
+const luis = 5;
+int x, y;
+begin
+  x := 5+6+7+8+9+6+6+6+4+5-2-4+5+5+5+5+5+5+5+5+5+5+5+5+6+7+7+6+6+6;
+end.
+// Output 29:
+ERROR (29): No more registers available.

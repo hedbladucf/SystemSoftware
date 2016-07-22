@@ -1,0 +1,124 @@
+Source Program:
+int x, iter;
+procedure rekt;
+	begin
+		if iter <> 1 then
+		begin
+			iter := iter - 1;
+			x := x * iter;
+			call rekt;
+		end;
+	end;
+begin
+	x := 4;
+	iter := x;
+	call rekt;
+	write x;
+end.
+
+Lexeme List:
+29 2 x 17 2 iter 18 30 2 rekt 18 21 23 2 iter 10 3 1 24 21 2 iter 20 2 iter 5 3 1 18 2 x 20 2 x 6 2 iter 18 27 2 rekt 18 22 18 22 18 21 2 x 20 3 4 18 2 iter 20 2 x 18 27 2 rekt 18 31 2 x 18 22 19 
+
+Lexeme List (Words):
+intsym identsym x commasym identsym iter semicolonsym procsym identsym rekt semicolonsym beginsym ifsym identsym iter neqsym numbersym 1 thensym beginsym identsym iter becomessym identsym iter minussym numbersym 1 semicolonsym identsym x becomessym identsym x multsym identsym iter semicolonsym callsym identsym rekt semicolonsym endsym semicolonsym endsym semicolonsym beginsym identsym x becomessym numbersym 4 semicolonsym identsym iter becomessym identsym x semicolonsym callsym identsym rekt semicolonsym writesym identsym x semicolonsym endsym periodsym 
+
+No errors, program is syntactically correct.
+
+Line	OP	R	L	M	
+0	jmp	0	0	17
+1	jmp	0	0	2
+2	inc	0	0	4
+3	lod	0	1	5
+4	lit	1	0	1
+5	neq	2	0	1
+6	jpc	2	0	16
+7	lod	2	1	5
+8	lit	3	0	1
+9	sub	4	2	3
+10	sto	4	1	5
+11	lod	0	1	4
+12	lod	1	1	5
+13	mul	2	0	1
+14	sto	2	1	4
+15	cal	0	1	1
+16	rtn	0	0	0
+17	inc	0	0	6
+18	lit	0	0	4
+19	sto	0	0	4
+20	lod	0	0	4
+21	sto	0	0	5
+22	cal	0	0	1
+23	lod	0	0	4
+24	sio	0	0	1
+25	rtn	0	0	0
+
+
+Initial Values				pc	bp	sp
+0	jmp	0	0	17	17	1	0	0	0	0	
+17	inc	0	0	6	18	1	6	0	0	0	0	0	0	
+18	lit	0	0	4	19	1	6	0	0	0	0	0	0	
+19	sto	0	0	4	20	1	6	0	0	0	0	4	0	
+20	lod	0	0	4	21	1	6	0	0	0	0	4	0	
+21	sto	0	0	5	22	1	6	0	0	0	0	4	4	
+22	cal	0	0	1	1	7	6	0	0	0	0	4	4	
+1	jmp	0	0	2	2	7	6	0	0	0	0	4	4	
+2	inc	0	0	4	3	7	10	0	0	0	0	4	4	0	1	1	23	
+3	lod	0	1	5	4	7	10	0	0	0	0	4	4	0	1	1	23	
+4	lit	1	0	1	5	7	10	0	0	0	0	4	4	0	1	1	23	
+5	neq	2	0	1	6	7	10	0	0	0	0	4	4	0	1	1	23	
+6	jpc	2	0	16	7	7	10	0	0	0	0	4	4	0	1	1	23	
+7	lod	2	1	5	8	7	10	0	0	0	0	4	4	0	1	1	23	
+8	lit	3	0	1	9	7	10	0	0	0	0	4	4	0	1	1	23	
+9	sub	4	2	3	10	7	10	0	0	0	0	4	4	0	1	1	23	
+10	sto	4	1	5	11	7	10	0	0	0	0	4	3	0	1	1	23	
+11	lod	0	1	4	12	7	10	0	0	0	0	4	3	0	1	1	23	
+12	lod	1	1	5	13	7	10	0	0	0	0	4	3	0	1	1	23	
+13	mul	2	0	1	14	7	10	0	0	0	0	4	3	0	1	1	23	
+14	sto	2	1	4	15	7	10	0	0	0	0	12	3	0	1	1	23	
+15	cal	0	1	1	1	11	10	0	0	0	0	12	3	0	1	1	23	
+1	jmp	0	0	2	2	11	10	0	0	0	0	12	3	0	1	1	23	
+2	inc	0	0	4	3	11	14	0	0	0	0	12	3	0	1	1	23	0	1	7	16	
+3	lod	0	1	5	4	11	14	0	0	0	0	12	3	0	1	1	23	0	1	7	16	
+4	lit	1	0	1	5	11	14	0	0	0	0	12	3	0	1	1	23	0	1	7	16	
+5	neq	2	0	1	6	11	14	0	0	0	0	12	3	0	1	1	23	0	1	7	16	
+6	jpc	2	0	16	7	11	14	0	0	0	0	12	3	0	1	1	23	0	1	7	16	
+7	lod	2	1	5	8	11	14	0	0	0	0	12	3	0	1	1	23	0	1	7	16	
+8	lit	3	0	1	9	11	14	0	0	0	0	12	3	0	1	1	23	0	1	7	16	
+9	sub	4	2	3	10	11	14	0	0	0	0	12	3	0	1	1	23	0	1	7	16	
+10	sto	4	1	5	11	11	14	0	0	0	0	12	2	0	1	1	23	0	1	7	16	
+11	lod	0	1	4	12	11	14	0	0	0	0	12	2	0	1	1	23	0	1	7	16	
+12	lod	1	1	5	13	11	14	0	0	0	0	12	2	0	1	1	23	0	1	7	16	
+13	mul	2	0	1	14	11	14	0	0	0	0	12	2	0	1	1	23	0	1	7	16	
+14	sto	2	1	4	15	11	14	0	0	0	0	24	2	0	1	1	23	0	1	7	16	
+15	cal	0	1	1	1	15	14	0	0	0	0	24	2	0	1	1	23	0	1	7	16	
+1	jmp	0	0	2	2	15	14	0	0	0	0	24	2	0	1	1	23	0	1	7	16	
+2	inc	0	0	4	3	15	18	0	0	0	0	24	2	0	1	1	23	0	1	7	16	011	16	
+3	lod	0	1	5	4	15	18	0	0	0	0	24	2	0	1	1	23	0	1	7	16	011	16	
+4	lit	1	0	1	5	15	18	0	0	0	0	24	2	0	1	1	23	0	1	7	16	011	16	
+5	neq	2	0	1	6	15	18	0	0	0	0	24	2	0	1	1	23	0	1	7	16	011	16	
+6	jpc	2	0	16	7	15	18	0	0	0	0	24	2	0	1	1	23	0	1	7	16	011	16	
+7	lod	2	1	5	8	15	18	0	0	0	0	24	2	0	1	1	23	0	1	7	16	011	16	
+8	lit	3	0	1	9	15	18	0	0	0	0	24	2	0	1	1	23	0	1	7	16	011	16	
+9	sub	4	2	3	10	15	18	0	0	0	0	24	2	0	1	1	23	0	1	7	16	011	16	
+10	sto	4	1	5	11	15	18	0	0	0	0	24	1	0	1	1	23	0	1	7	16	011	16	
+11	lod	0	1	4	12	15	18	0	0	0	0	24	1	0	1	1	23	0	1	7	16	011	16	
+12	lod	1	1	5	13	15	18	0	0	0	0	24	1	0	1	1	23	0	1	7	16	011	16	
+13	mul	2	0	1	14	15	18	0	0	0	0	24	1	0	1	1	23	0	1	7	16	011	16	
+14	sto	2	1	4	15	15	18	0	0	0	0	24	1	0	1	1	23	0	1	7	16	011	16	
+15	cal	0	1	1	1	19	18	0	0	0	0	24	1	0	1	1	23	0	1	7	16	011	16	
+1	jmp	0	0	2	2	19	18	0	0	0	0	24	1	0	1	1	23	0	1	7	16	011	16	
+2	inc	0	0	4	3	19	22	0	0	0	0	24	1	0	1	1	23	0	1	7	16	011	16	0	1	15	16	
+3	lod	0	1	5	4	19	22	0	0	0	0	24	1	0	1	1	23	0	1	7	16	011	16	0	1	15	16	
+4	lit	1	0	1	5	19	22	0	0	0	0	24	1	0	1	1	23	0	1	7	16	011	16	0	1	15	16	
+5	neq	2	0	1	6	19	22	0	0	0	0	24	1	0	1	1	23	0	1	7	16	011	16	0	1	15	16	
+6	jpc	2	0	16	16	19	22	0	0	0	0	24	1	0	1	1	23	0	1	7	16	011	16	0	1	15	16	
+16	rtn	0	0	0	16	15	18	0	0	0	0	24	1	0	1	1	23	0	1	7	16	011	16	
+16	rtn	0	0	0	16	11	14	0	0	0	0	24	1	0	1	1	23	0	1	7	16	
+16	rtn	0	0	0	16	7	10	0	0	0	0	24	1	0	1	1	23	
+16	rtn	0	0	0	23	1	6	0	0	0	0	24	1	
+23	lod	0	0	4	24	1	6	0	0	0	0	24	1	
+
+Register 0 contains 24
+
+24	sio	0	0	1	25	1	6	0	0	0	0	24	1	
+25	rtn	0	0	0	0	0	0	0	0	0	
